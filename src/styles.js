@@ -1,4 +1,4 @@
-const styles = {
+export default {
 	ul: {
 		display: 'flex',
 		alignItems: 'center',
