@@ -9,9 +9,9 @@ const ControlledSwitch = (props) => {
 			{(data) => (
 				<Fragment>
 					<Switch location={data.location}>{props.children}</Switch>
+					{/*This one strictly handles preloading*/}
 					<div style={{ display: 'none' }}>
 						{data.nextLocation && (
-							//This one strictly handles preloading
 							<Switch location={data.nextLocation}>{props.children}</Switch>
 						)}
 					</div>
