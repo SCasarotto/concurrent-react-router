@@ -11,6 +11,8 @@ import ControlledRoute from './ControlledRoute'
 import ControlledLink from './ControlledLink'
 import ProgressBar from './ProgressBar'
 
+import styles from './styles'
+
 const App = Loadable({
 	loader: () => import('./pages/App'),
 	loading: () => null,
@@ -67,37 +69,41 @@ class WrappedApp extends Component {
 				<LocationContext.Consumer>
 					{(data) => data.loading && <ProgressBar />}
 				</LocationContext.Consumer>
-				<ul
-					style={{
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'center',
-						listStyle: 'none',
-						padding: '20px 0px',
-						margin: 0,
-						backgroundColor: '#5b626f',
-					}}
-				>
-					<li style={{ padding: '0px 15px', margin: 0 }}>
-						<ControlledLink to="/">Home</ControlledLink>
+				<ul style={styles.ul}>
+					<li style={styles.li}>
+						<ControlledLink to="/" style={styles.link}>
+							Home
+						</ControlledLink>
 					</li>
-					<li style={{ padding: '0px 15px', margin: 0 }}>
-						<ControlledLink to="/page1">Page1</ControlledLink>
+					<li style={styles.li}>
+						<ControlledLink to="/page1" style={styles.link}>
+							Page1
+						</ControlledLink>
 					</li>
-					<li style={{ padding: '0px 15px', margin: 0 }}>
-						<ControlledLink to="/page2">Page2</ControlledLink>
+					<li style={styles.li}>
+						<ControlledLink to="/page2" style={styles.link}>
+							Page2
+						</ControlledLink>
 					</li>
-					<li style={{ padding: '0px 15px', margin: 0 }}>
-						<ControlledLink to="/page3">Page3</ControlledLink>
+					<li style={styles.li}>
+						<ControlledLink to="/page3" style={styles.link}>
+							Page3
+						</ControlledLink>
 					</li>
-					<li style={{ padding: '0px 15px', margin: 0 }}>
-						<ControlledLink to="/page4/SomeUID">Page4</ControlledLink>
+					<li style={styles.li}>
+						<ControlledLink to="/page4/SomeUID" style={styles.link}>
+							Page4
+						</ControlledLink>
 					</li>
-					<li style={{ padding: '0px 15px', margin: 0 }}>
-						<ControlledLink to="/notFound">Not Found</ControlledLink>
+					<li style={styles.li}>
+						<ControlledLink to="/notFound" style={styles.link}>
+							Not Found
+						</ControlledLink>
 					</li>
-					<li style={{ padding: '0px 15px', margin: 0 }}>
-						<ControlledLink to="/notFound2">Not Found2</ControlledLink>
+					<li style={styles.li}>
+						<ControlledLink to="/notFound2" style={styles.link}>
+							Not Found2
+						</ControlledLink>
 					</li>
 				</ul>
 				<ControlledSwitch>
@@ -131,3 +137,4 @@ ReactDOM.render(<Base />, document.getElementById('root'))
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister()
+

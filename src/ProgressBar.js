@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 const styles = {
 	wrapper: {
@@ -6,14 +6,14 @@ const styles = {
 		width: '100%',
 		height: 3,
 		top: 0,
-		left: 0
+		left: 0,
 	},
 	bar: (percentage) => ({
 		width: `${percentage}%`,
 		backgroundColor: 'red',
 		height: '100%',
-		transition: 'width 0.2s ease-in'
-	})
+		transition: 'width 0.2s ease-in',
+	}),
 }
 
 class ProgressBar extends Component {
@@ -35,7 +35,7 @@ class ProgressBar extends Component {
 		const { percentage } = this.state
 		//Thank you react-redux-loading-bar for function
 		// - https://github.com/mironov/react-redux-loading-bar/blob/master/src/loading_bar.js
-		const newPercent = percentage + (10 * Math.cos(percentage * (Math.PI / 2 / 100)))
+		const newPercent = percentage + 10 * Math.cos(percentage * (Math.PI / 2 / 100))
 		if (this._isMounted && newPercent < 99) {
 			this.setState({ percentage: newPercent })
 		}
@@ -43,9 +43,9 @@ class ProgressBar extends Component {
 
 	render() {
 		return (
-			<div style={styles.wrapper} >
-	        	<div style={styles.bar(this.state.percentage)}/>
-	      	</div>
+			<div style={styles.wrapper}>
+				<div style={styles.bar(this.state.percentage)} />
+			</div>
 		)
 	}
 }

@@ -11,7 +11,7 @@ const ControlledLink = (props) => {
 	//
 	return (
 		<LocationContext.Consumer>
-			{(data) => <Link {...props} style={{ color: 'white' }} replace={!!data.nextLocation} />}
+			{(data) => <Link {...props} replace={!!data.nextLocation} />}
 		</LocationContext.Consumer>
 	)
 }

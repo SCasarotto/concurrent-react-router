@@ -59,7 +59,6 @@ export default (props) => {
 	return (
 		<LocationContext.Consumer>
 			{(data) => {
-				//I don't want to pass all props because it will cause many renders
 				const { location, nextLocation, startLoading, updateLocation } = data
 				return (
 					<ControlledRoute

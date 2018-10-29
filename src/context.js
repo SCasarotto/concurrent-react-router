@@ -15,7 +15,6 @@ class LocationProvider extends Component {
 			this.setState({ loading: false })
 		},
 		updateLocation: () => {
-			console.log('updateLocation')
 			const { nextLocation } = this.state
 			this.setState({
 				loading: false,
@@ -26,8 +25,6 @@ class LocationProvider extends Component {
 	}
 
 	static getDerivedStateFromProps(nextProps, prevState) {
-		// console.log("New Props", nextProps, prevState)
-
 		//INIT
 		if (!prevState.location) {
 			return { ...prevState, location: nextProps.location }
